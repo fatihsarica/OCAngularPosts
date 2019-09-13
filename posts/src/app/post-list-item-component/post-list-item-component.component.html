@@ -1,1 +1,8 @@
-<p>post-list-item-component works!</p>
+<li class="list-group-item"
+    [ngClass]="{'list-group-item-success': postLoveIts > 0, 'list-group-item-danger': postLoveIts < 0 }">
+    <h1>{{postTitle}}</h1>
+    <p>{{postCreatedAt  | date: 'short'}}</p>
+    <p>{{postContent}}</p>
+    <button class="btn btn-success" (click)="loveIt()" style="margin-right : 10px">Love it !</button>
+    <button class="btn btn-danger" (click)="dontLoveIt()">Don't love it !</button>
+</li>
