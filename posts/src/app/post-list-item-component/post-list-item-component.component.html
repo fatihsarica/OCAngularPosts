@@ -1,8 +1,9 @@
-<li class="list-group-item"
-    [ngClass]="{'list-group-item-success': postLoveIts > 0, 'list-group-item-danger': postLoveIts < 0 }">
-    <h1>{{postTitle}}</h1>
-    <p>{{postCreatedAt  | date: 'short'}}</p>
-    <p>{{postContent}}</p>
-    <button class="btn btn-success" (click)="loveIt()" style="margin-right : 10px">Love it !</button>
-    <button class="btn btn-danger" (click)="dontLoveIt()">Don't love it !</button>
+<li class="list-group-item" style="margin-top: 10px"
+    [ngClass]="{'list-group-item-success': post.loveIts > 0, 'list-group-item-danger': post.loveIts < 0 }">
+    <p class="pull-right">{{post.createdAt  | date: 'short'}}</p>
+    <h1>{{post.title}}</h1>
+    <p>{{post.content}}</p>
+    <button class="btn btn-success" (click)="onLoveIt()" style="margin-right : 10px">Love it !</button>
+    <button class="btn btn-danger" (click)="onDontLoveIt()">Don't love it !</button>
+    <button class="btn btn-danger pull-right" (click)="onRemovePost(post)">Supprimer</button>
 </li>
